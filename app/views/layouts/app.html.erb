@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App With React</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag 'app', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'app-bundle' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
