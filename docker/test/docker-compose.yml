@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:9.6-alpine
+    ports:
+      - "5433"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    restart: always
+
+  app:
+    build:
+      context: ./../../../rails_react/
+      dockerfile: Dockerfile
+      args:
+        ENVIRONMENT: test
+    image: rails_react:latest
+    ports:
+      - "3000:3000"
+    entrypoint: ["/docker-entrypoint.sh"]
+    command: bundle exec rspec spec/*
+    environment:
+      - BOOTSNAP_DISABLED=true
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=postgres
+      - NODE_ENV=test
+      - RAILS_ENV=test
+    depends_on:
+      - postgres
+    links:
+      - postgres:db
