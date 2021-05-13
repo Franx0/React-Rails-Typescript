@@ -27,7 +27,7 @@ module.exports = function(api) {
         },
         '@babel/preset-react'
       ],
-      (isProductionEnv || isDevelopmentEnv) && [
+      (isProductionEnv || isDevelopmentEnv) && [
         '@babel/preset-env',
         {
           forceAllTransforms: true,
