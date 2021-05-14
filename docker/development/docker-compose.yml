@@ -50,7 +50,7 @@ services:
       args:
         ENVIRONMENT: development
     image: rails_react:latest
-    command: bash -c "rm -rf public/packs/* || true && rm -rf tmp/cache/* && ./bin/webpack-dev-server"
+    command: bash -c "rm -rf public/packs/* || true && rm -rf tmp/cache/* && bin/webpack-dev-server"
     ports:
       - '3035:3035'
     volumes:
