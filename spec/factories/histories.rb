@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :history do
     data { (1...4).to_a }
-    type { 'numeric' }
+    typed { 'numeric' }
   end
 end

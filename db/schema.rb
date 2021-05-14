@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_05_14_190429) do
 
   create_table "histories", force: :cascade do |t|
     t.text "data", default: [], array: true
-    t.string "type"
+    t.string "typed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
