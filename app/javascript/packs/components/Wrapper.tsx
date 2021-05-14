@@ -21,7 +21,7 @@ const Wrapper: FunctionComponent<any> = (props: WrapperProps) => {
   }, []);
 
   return (
-    <main>
+    <main id="main">
       <Header />
       {children}
       <Footer />
