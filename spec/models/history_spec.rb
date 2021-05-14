@@ -12,7 +12,7 @@ RSpec.describe History, type: :model do
     end
 
     it 'should be invalid with null type' do
-      subject.type = nil
+      subject.typed = nil
       expect(subject.valid?).to be_falsey
     end
   end
