@@ -9,8 +9,7 @@ RSpec.describe Api::V1::HistoriesController, type: %i[controller api] do
     include_examples "controller object format response", Array, "data", "all histories"
 
     it "should return all proposals" do
-      json = JSON.parse(response)
-      expect(json["data"].count).to eql(10)
+      expect(json_response["data"].count).to eql(10)
     end
   end
 
@@ -41,7 +40,7 @@ RSpec.describe Api::V1::HistoriesController, type: %i[controller api] do
 
       include_examples "controller status response", :unprocessable_entity
       include_examples "controller data format response", "errors"
-      include_examples "controller object format response", Array, "errors", "proposal errors"
+      include_examples "controller object format response", Hash, "errors", "history errors"
     end
   end
 end
