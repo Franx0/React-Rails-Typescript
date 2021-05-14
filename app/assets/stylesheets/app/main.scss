@@ -1,0 +1,30 @@
+#o-root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(80, 181, 190, 1);
+}
+
+footer {
+  width: 100%;
+  clear: both;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  background-color: rgba(80, 181, 190, 1);
+}
