@@ -32,7 +32,11 @@ RSpec.describe Api::V1::HistoriesController, type: %i[controller api] do
 
       include_examples "controller status response", :created
       include_examples "controller data format response", "data"
-      include_examples "controller object format response", Hash, "data", "created history"
+      include_examples "controller object format response", Integer, "data", "created history"
+
+      it "should return all proposals" do
+        expect(json_response["data"]).to eql(@params[:history][:data].sum)
+      end
     end
 
     context "invalid create" do

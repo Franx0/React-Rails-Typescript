@@ -10,7 +10,7 @@ module Api::V1
       if @history.errors.any?
         render json: { errors: @history.errors.messages }, status: :unprocessable_entity
       else
-        render json: { data: @history, status: :created }
+        render json: { data: @history.calc }, status: :created
       end
     end
 
