@@ -24,7 +24,7 @@ export function setErrors(name: string, errors: Array<string>) {
 }
 
 /** Actions to middleware */
-export function redirectTo(url:string, locale: string, action: string, forced: boolean) {
+export function redirectTo(url:string, locale?: string, action?: any, forced?: boolean) {
   return {
     type: REDIRECT_TO,
     data: {

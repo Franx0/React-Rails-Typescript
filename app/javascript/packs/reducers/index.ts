@@ -5,6 +5,7 @@ import {FETCH_LOGOUT} from '../containers/login/actions';
 import {SET_TRANSLATIONS_OK, SET_ERRORS_OK} from '../actions';
 
 /** Reducers imports */
+import historyReducer from '../containers/histories/reducers';
 
 const defaultGlobalState = {translations: {}, errors: {}};
 
@@ -25,10 +26,11 @@ const globalReducer = (state = defaultGlobalState, action) => {
 
 const appReducer = combineReducers({
   routing,
+  history: historyReducer,
   global: globalReducer
 });
 
-const rootReducer = (state: any, action: any): void => {
+const rootReducer = (state: any, action: any): any => {
   if (action.type === FETCH_LOGOUT) {
     localStorage.clear();
     state = undefined;
