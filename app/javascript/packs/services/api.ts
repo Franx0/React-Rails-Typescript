@@ -51,7 +51,7 @@ const handleRequest = (
     "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
     Accept: format,
   }, headers,
-    state.client.token ? { Authorization: state.client.token } : null
+    state && state?.client?.token ? { Authorization: state.client.token } : null
   );
 
   // Set Query String params
