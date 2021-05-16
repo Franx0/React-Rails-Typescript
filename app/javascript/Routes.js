@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 
 import AuthRoute from "./packs/routes/AuthRoute";
 import NotFound from "./packs/containers/NotFound";
+import History from "./packs/containers/History";
 
 // Config
 import routes from "./packs/config/routes";
@@ -14,12 +15,12 @@ export default (routesProps) => {
       render={({ location }) => (
         <Switch key={routesProps.history.location.pathname}>
           {/** Public routes */}
-          {/* <Route
+          <Route
             exact
-            path={routes.client.signin}
-            render={(props) => <Login {...props} />}
+            path={routes.client.home}
+            render={(props) => <History {...props} />}
             history={routesProps.history}
-          /> */}
+          />
           {/** Private routes */}
           {/* <AuthRoute
             {...routesProps.history}

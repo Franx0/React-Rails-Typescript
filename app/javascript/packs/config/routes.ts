@@ -1,11 +1,10 @@
 export const routes = {
-  session: {
-    create: "users/sign_in",
-    authUser: "auth",
+  histories: {
+    index: "history",
+    create: "calc",
   },
   client: {
-    signin: "/signin",
-    home: "/",
+    home: "/sanz",
   }
 };
 
