@@ -11,9 +11,11 @@ import redirectMiddleware from './packs/middlewares/redirect';
 
 /** Sagas */
 import * as Authentication from './packs/containers/login/sagas';
+import * as Histories from './packs/containers/histories/sagas';
 
 const sagas = {
   ...Authentication,
+  ...Histories
 };
 
 export default function configureStore(history) {
@@ -29,7 +31,7 @@ export default function configureStore(history) {
   /* Set client credentials in localStorage */
   store.subscribe(()=>{
     localStorage.setItem('client', (JSON.stringify({
-      token: ((localStorage.getItem('client') && localStorage.getItem('client').token) ? localStorage.getItem('client') : store.getState().client).token
+      token: ((localStorage.getItem('client') && localStorage.getItem('client').token) ? localStorage.getItem('client') : store.getState().client)?.token
     })));
   });
 
