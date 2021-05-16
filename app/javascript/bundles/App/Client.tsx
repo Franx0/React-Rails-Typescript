@@ -20,7 +20,6 @@ type ClientProps = {
 };
 
 const Client: FunctionComponent<any> = (props: ClientProps) => {
-  console.log('epale')
   const { csrfToken } = props;
   return (
     <Provider store={store}>
