@@ -12,7 +12,7 @@ services:
     restart: always
   app:
     build:
-      context: ./../../../rails_react/
+      context: ./../../
       dockerfile: Dockerfile
       args:
         ENVIRONMENT: development
@@ -22,7 +22,7 @@ services:
     entrypoint: ["/docker-entrypoint.sh"]
     command: bundle exec rails s -b 0.0.0.0 -p 3000
     volumes:
-      - ./../../../rails_react/:/opt/app
+      - ./../../:/opt/app
       - app_rvm_gems:/vendor/bundle
       - app_node_modules:/opt/app/node_modules
       - $SSH_AUTH_SOCK:$SSH_AUTH_SOCK
@@ -45,7 +45,7 @@ services:
     restart: always
   webpacker:
     build:
-      context: ./../../../rails_react/
+      context: ./../../
       dockerfile: Dockerfile
       args:
         ENVIRONMENT: development
@@ -54,7 +54,7 @@ services:
     ports:
       - '3035:3035'
     volumes:
-      - ./../../../rails_react/:/opt/app
+      - ./../../:/opt/app
       - app_rvm_gems:/vendor/bundle
       - app_node_modules:/opt/app/node_modules
     environment:
