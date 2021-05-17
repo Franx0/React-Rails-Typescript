@@ -10,6 +10,10 @@ It is a example Rails application built with Webpack that supports default Rails
 - React ^17.0  
 - Redux ^4.1  
 
+### Run Coding Test
+
+[Sanz Feature](https://locahost:3000/sanz)
+
 #### Prerequisites  
 #### Installation (non Dockerized)
 1. ```> rvm install 3.0.1```   
